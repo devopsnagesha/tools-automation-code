@@ -1,2 +1,11 @@
--name: set Name in prompt
- ansible.builtin.shell: set-prompt prometheus
+- name: set Name in prompt
+  ansible.builtin.shell: set-prompt prometheus
+
+- name: download and extract prometheus
+  ansible.builtin.unarchive:
+    src: https://github.com/prometheus/prometheus/releases/download/v2.51.1/prometheus-2.51.1.linux-amd64.tar.gz
+    dest: /opt
+    remote_src: yes
+
+
+

@@ -1,0 +1,10 @@
+[Unit]
+  Description = prometheus server Service
+  
+  [Service]
+  User=bin
+  Environment=DB_HOST=
+  ExecStart=
+  
+  [Install]
+  WantedBy=multi-user.target
