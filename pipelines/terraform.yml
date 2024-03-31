@@ -9,13 +9,13 @@ pipelines:
         auto_update: true
         branch: main
     stages:
-      APPLY:
+    - APPLY:
         fetch_materials: true
         approval:
           type: manual
         jobs:
           terraform-apply:
             tasks:
-              - exec: {command: terraform, arguments: [ "init" ], run_if: passed}
-              - exec: {command: terraform, arguments: [ "apply", "-auto-approve" ], run_if: passed}
+            - exec: {command: terraform, arguments: [ "init" ], run_if: passed}
+            - exec: {command: terraform, arguments: [ "apply", "-auto-approve" ], run_if: passed}
 
