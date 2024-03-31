@@ -1,0 +1,2 @@
+-name: set Name in prompt
+ ansible.builtin.shell: set-prompt prometheus
