@@ -4,12 +4,12 @@ resource "aws_instance" "instance" {
   vpc_security_group_ids = [data.aws_security_group.selected.id]
 
   tags = {
-    Name = var.tools_name
+    Name = var.tool_name
   }
 }
 
 resource "aws_route53_record" "www" {
-  name    = var.tools_name
+  name    = var.tool_name
   type    = "A"
   zone_id = var.zone_id
   records = [aws_instance.instance.public_ip]
