@@ -3,8 +3,8 @@
   
   [Service]
   User=bin
-  Environment=DB_HOST=
-  ExecStart=
+  ExecStart=/opt/prometheus-{{ version }}.linux-amd64/prometheus
+  SyslogIdentifier=prometheus
   
   [Install]
   WantedBy=multi-user.target
