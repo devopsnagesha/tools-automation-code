@@ -1,6 +1,6 @@
 format_version: 10
 pipelines:
-  expense-tf-apply:
+  tools-tf-apply:
     group: Terraform
     materials:
       git-1ab79a5:
