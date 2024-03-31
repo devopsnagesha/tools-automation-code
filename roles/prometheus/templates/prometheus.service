@@ -3,6 +3,7 @@
   
   [Service]
   User=bin
+  working directory=/opt/prometheus-{{ version }}.linux-amd64
   ExecStart=/opt/prometheus-{{ version }}.linux-amd64/prometheus
   SyslogIdentifier=prometheus
   
