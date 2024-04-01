@@ -1,4 +1,4 @@
-resource "aws_instance" "instance" {
+ resource "aws_instance" "instance" {
   ami           = data.aws_ami.ami.image_id
   instance_type = var.instance_type
   vpc_security_group_ids = [data.aws_security_group.selected.id]
@@ -13,7 +13,7 @@ resource "aws_instance" "instance" {
   }
 
   tags = {
-    Name = var.tool_name
+    Name    = var.tool_name
   }
 }
 
@@ -24,6 +24,15 @@ resource "aws_route53_record" "www" {
   records = [aws_instance.instance.public_ip]
   ttl     = 30
 }
+
+ resource "aws_route53_record" "www" {
+   name    = "${var.tool_name}-internal"
+   type    = "A"
+   zone_id = var.zone_id
+   records = [aws_instance.instance.private_ip]
+   ttl     = 30
+ }
+
 
 resource "aws_iam_role" "role" {
   name = "${var.tool_name}-role"
