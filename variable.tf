@@ -7,7 +7,12 @@ variable "tools" {
 
     grafana = {
       instance_type = "t3.small"
-      policy_resource_list = ["ec2:DescribeInstances"]
+      policy_resource_list = []
+    }
+
+    vault = {
+      instance_type = "t3.small"
+      policy_resource_list = []
     }
   }
 }
@@ -15,4 +20,3 @@ variable "tools" {
 variable "zone_id" {
   default = "Z09874791K9BLG1QR2D7R"
 }
-#end of prometheus setup
