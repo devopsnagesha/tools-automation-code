@@ -1,6 +1,6 @@
 format_version: 10
 pipelines:
-  tools-tf-apply:
+  tools-tf-destroy:
     group: Terraform
     materials:
       git-1ab79a5:
