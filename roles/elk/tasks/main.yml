@@ -11,8 +11,8 @@
     name: elasticsearch
     state: installed
 
-- name: start Elasticsearch
-  ansible.builtin.systemd_services:
+- name: Start Elasticsearch
+  ansible.builtin.systemd_service:
     name: elasticsearch
     state: started
     enabled: yes
